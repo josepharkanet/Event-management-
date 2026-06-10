@@ -1,0 +1,54 @@
+/* =============================================================
+   HADIYANA — RTL overrides (loaded by main.js when lang=ar)
+   The layout is built on CSS logical properties (margin-inline,
+   padding-inline, inset-inline, text-align: start), so most of
+   it mirrors automatically. This file only handles the few
+   things that need an explicit flip in RTL.
+   ============================================================= */
+
+[dir="rtl"] body {
+  /* Prefer an Arabic-capable face first in RTL mode. */
+  font-family: "Noto Naskh Arabic", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4 {
+  font-family: "Noto Naskh Arabic", "Cormorant Garamond", Georgia, serif;
+  letter-spacing: 0; /* spaced caps don't apply to Arabic */
+}
+
+/* Eyebrow / spaced-caps labels: Arabic should not be letter-spaced. */
+[dir="rtl"] .eyebrow,
+[dir="rtl"] .brand__credit,
+[dir="rtl"] .contrast__label,
+[dir="rtl"] .footer-col h4,
+[dir="rtl"] .flow__cap,
+[dir="rtl"] .rev-table thead th,
+[dir="rtl"] .contact-details span {
+  letter-spacing: normal;
+}
+
+/* Directional arrows / chevrons should point the other way in RTL. */
+[dir="rtl"] .contrast__arrow svg,
+[dir="rtl"] .flow__link svg,
+[dir="rtl"] .btn svg,
+[dir="rtl"] .hero__cta .btn--ghost svg {
+  transform: scaleX(-1);
+}
+/* …except the vertical arrow used in the stacked (mobile) contrast block. */
+@media (max-width: 900px) {
+  [dir="rtl"] .contrast__arrow { transform: rotate(90deg); }
+  [dir="rtl"] .contrast__arrow svg { transform: none; }
+}
+
+/* Mobile nav slides in from the (logical) end; in RTL that is the left.
+   The transform values are physical, so flip them explicitly. */
+@media (max-width: 900px) {
+  [dir="rtl"] .nav { transform: translateX(-100%); }
+  [dir="rtl"] .nav.is-open { transform: translateX(0); }
+}
+
+/* Underline animation origin reads naturally either way; nothing to do.
+   Skip-link uses inset-inline-start, so it already flips. */
