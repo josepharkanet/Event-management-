@@ -110,6 +110,10 @@
       var panel = trigger.parentElement.nextElementSibling; // <div class="acc__panel">
       trigger.setAttribute("aria-expanded", String(!expanded));
       if (!panel) return;
+      if (prefersReduced) { // no CSS transition -> transitionend never fires, so toggle directly
+        panel.hidden = expanded;
+        return;
+      }
       if (expanded) {
         panel.style.height = panel.scrollHeight + "px";
         requestAnimationFrame(function () { panel.style.height = "0px"; });
