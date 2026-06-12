@@ -245,7 +245,14 @@ body.menu-open .hamburger span { background: #fff; }
 .hero__bg iframe, .hero__bg video {
   position: absolute; top: 50%; left: 50%;
   width: 100vw; height: 56.25vw; min-height: 100%; min-width: 177.78vh;
-  transform: translate(-50%, -50%); border: 0; object-fit: cover; pointer-events: none;
+  border: 0; object-fit: cover; pointer-events: none;
+}
+/* Zoom in and lift the YouTube embed so its title bar (top) and the
+   control chrome (bottom) are cropped above/below the visible hero. */
+.hero__bg iframe { transform: translate(-50%, -54%) scale(1.45); }
+.hero__bg video  { transform: translate(-50%, -50%); }
+@media (max-width: 700px) {
+  .hero__bg iframe { transform: translate(-50%, -56%) scale(2.1); }
 }
 .hero__overlay {
   position: absolute; inset: 0; z-index: -2;
