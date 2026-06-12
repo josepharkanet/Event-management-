@@ -242,6 +242,9 @@ body.menu-open .hamburger span { background: #fff; }
 /* Video background (needs network). SWAP POINT: replace the iframe with
    a <video> element + assets/img poster for a fully-offline asset. */
 .hero__bg { position: absolute; inset: 0; z-index: -3; overflow: hidden; }
+/* Transparent shield over the iframe so hovering never reveals YouTube's
+   control bar, play button, or next-video suggestions. */
+.hero__bg::after { content: ""; position: absolute; inset: 0; z-index: 2; }
 .hero__bg iframe, .hero__bg video {
   position: absolute; top: 50%; left: 50%;
   width: 100vw; height: 56.25vw; min-height: 100%; min-width: 177.78vh;
