@@ -1,113 +1,90 @@
 # HADIYANA — Corporate / Marketing Website
 
-A premium, static marketing site for **HADIYANA**, the AI-powered event-planning
-platform with a built-in multi-vendor marketplace, built for the UAE.
+A premium, **multi-page** static marketing site for **HADIYANA**, the AI-powered
+event-planning platform with a built-in multi-vendor marketplace, built for the
+UAE. Pure HTML + CSS with vanilla-JS niceties — no framework, no build step,
+no backend.
 
-Built per the PRD as a single long landing page in **pure HTML + CSS** with a
-little vanilla JS for niceties. No framework, no build step, no backend.
-
-> **Owner:** Arkanet Technologies LLC · **Built by:** Arkanet Technologies LLC
+> **Owner:** Arkanet Technologies LLC
 
 ---
+
+## Pages
+
+| Page               | Content                                                            |
+|--------------------|--------------------------------------------------------------------|
+| `index.html`       | Animated hero, marquee, problem→solution, pillars, lifecycle, stats, feature teaser, CTA |
+| `features.html`    | 16 platform modules, AI co-pilot, 8 signature features, event types |
+| `marketplace.html` | Services & products, vendor benefits, 8-step vendor onboarding (`#vendors`) |
+| `investors.html`   | UAE opportunity stats, viral-growth mechanic, 8 revenue streams     |
+| `about.html`       | Why HADIYANA, audience tabs (hosts/guests/vendors/admin), Arkanet   |
+| `contact.html`     | Lead form (client-side validation), contact details, FAQ accordion  |
 
 ## Run it
 
-No server required — just open the file:
+No server required — just open `index.html` (all pages are linked).
 
 ```bash
-open index.html          # macOS
-xdg-open index.html      # Linux
-# or double-click index.html in your file manager
-```
-
-To run it over a local server (handy for testing fonts / share links):
-
-```bash
-python3 -m http.server   # then visit http://localhost:8000
+python3 -m http.server   # optional: http://localhost:8000
 ```
 
 ---
 
-## File structure
+## Structure
 
 ```
 hadiyana-site/
-├── index.html            # the whole site, one semantic page
+├── index.html / features.html / marketplace.html /
+│   investors.html / about.html / contact.html
 ├── css/
-│   ├── styles.css        # main styles + :root design tokens (PRD §2)
-│   └── rtl.css           # RTL overrides, loaded by JS when lang=ar
+│   ├── styles.css        # shared styles + :root design tokens
+│   └── rtl.css           # RTL overrides (lazy-loaded when lang=ar)
 ├── js/
-│   └── main.js           # nav, tabs, accordion, scroll-reveal, count-up,
-│                         #   lang toggle, form validation
-├── assets/
-│   ├── img/              # image swap points (see below)
-│   └── icons/            # icons are inline SVG in the HTML (no icon font)
+│   └── main.js           # shared: nav, reveal, counters, tilt, tabs,
+│                         #   accordion, lang toggle, form validation
+├── assets/img|icons/     # swap points (see READMEs inside)
 └── README.md
 ```
 
----
+## Modern UI / animation inventory
 
-## Where to swap images
+- **Aurora heroes** — drifting blurred gradient blobs + film-grain overlay
+- **Staggered entrance** (`.stagger`) and **scroll reveals** (`data-reveal`,
+  `data-reveal-group` for per-child stagger)
+- **Shimmering gradient text** (`.grad-text`)
+- **Floating glass cards** + orbiting ring + floating phone mockup (home hero)
+- **Marquee strip** of event types (pauses on hover)
+- **3D tilt** on cards (`data-tilt`, pointer-fine devices only)
+- **Count-up stats** (`data-countup`)
+- **Scroll progress bar** + glass sticky header
+- All motion respects `prefers-reduced-motion`.
 
-The site ships **image-free** so it works fully offline — the hero "phone" and
-all icons are inline SVG/CSS. There are two documented swap points:
+## Swap points
 
-1. **Hero visual** — `index.html`, the `.hero__visual` block (look for the
-   `SWAP POINT` comment). Replace the SVG phone mockup with:
-   ```html
-   <img src="assets/img/hero.jpg" alt="HADIYANA event page on a phone, UAE setting" />
-   ```
-2. **Social share image** — drop a `1200×630` image at
-   `assets/img/og-image.png` (already referenced by the Open Graph / Twitter
-   meta tags in `<head>`).
+1. **Hero visual** (`index.html`, `.hero__visual`) — replace the SVG phone
+   mockup with `<img src="assets/img/hero.jpg" alt="…">`.
+2. **Share image** — drop a 1200×630 `assets/img/og-image.png`.
+3. **Favicon** — inline SVG data-URI in each `<head>`; replace when branded.
 
-A favicon placeholder is inlined as an SVG data-URI in `<head>`; replace with a
-real `favicon.ico`/`.svg` when available.
+## Lead form → real backend
 
----
-
-## Wiring the lead form to a real backend
-
-The contact form (`#leadForm`) is a **client-side-only stub**: it validates,
-then shows a success state. It does not send anything.
-
-To connect a real endpoint, in `index.html`:
-
-```html
-<form id="leadForm" action="https://your-endpoint.example/submit" method="post" ...>
-```
-
-…and in `js/main.js`, inside the `form.addEventListener("submit", …)` handler,
-**remove the `e.preventDefault()` line** (or replace the success block with a
-`fetch(form.action, { method: "POST", body: new FormData(form) })` call and
-handle the response). The current `action="mailto:info@arkanet.ae"` is a
-no-backend fallback.
-
----
+`contact.html` → `#leadForm` is a client-side stub (validates, shows success).
+To wire a backend: set the form `action` to your endpoint and, in `js/main.js`,
+replace the success block in the submit handler with a
+`fetch(form.action, { method: "POST", body: new FormData(form) })` call.
 
 ## Bilingual / RTL (v1)
 
-- Default is `<html lang="en" dir="ltr">`.
-- The **EN / ع** toggle in the nav flips `lang`/`dir`, lazy-loads `css/rtl.css`,
-  and swaps a **documented subset** of nav strings (the `AR_STRINGS` map in
-  `main.js`) — this is the intentional v1 stub.
-- The layout uses CSS **logical properties** throughout (`margin-inline`,
-  `padding-inline`, `inset-inline`, `text-align: start`), so it mirrors cleanly
-  in RTL; `rtl.css` only handles the few things that need an explicit flip
-  (directional arrows, the mobile nav slide direction, Arabic letter-spacing).
-- To go fully bilingual: add `data-i18n` keys to translatable nodes and expand
-  the string map, or serve a separate `index.ar.html`.
+- The **EN / ع** toggle flips `lang`/`dir`, lazy-loads `css/rtl.css`, and swaps
+  any element carrying a `data-ar="…"` attribute (nav links ship translated).
+- Layout uses CSS logical properties throughout, so RTL mirrors cleanly;
+  `rtl.css` only handles explicit flips (arrows, letter-spacing, fonts).
+- To go fully bilingual: add `data-ar` to more nodes, or serve `*.ar.html`.
 
----
+## Conventions
 
-## Notes & conventions
-
-- **Design tokens** live in `:root` in `styles.css` (burgundy / champagne-gold /
-  cream palette, serif + sans type stack). Change the brand there.
-- **Accessibility**: semantic landmarks, one `<h1>`, keyboard-accessible tabs &
-  accordion (`aria-expanded`, arrow keys), visible focus states, skip link,
-  `prefers-reduced-motion` respected, AA-minded contrast.
-- **SEO**: title, meta description, Open Graph + Twitter cards, favicon.
-- This is a **marketing site**, not the product — no functional dashboards
-  beyond the static hero mockup.
-```
+- Design tokens in `:root` (`css/styles.css`) — burgundy / champagne-gold /
+  cream, Cormorant Garamond + Inter (+ Noto Naskh Arabic).
+- Accessibility: landmarks, one `<h1>` per page, keyboard tabs & accordion,
+  focus states, skip links, reduced-motion support.
+- This is a **marketing site**, not the product.

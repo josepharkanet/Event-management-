@@ -4,137 +4,142 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HADIYANA — The Modern Way the UAE Celebrates | Event Planning Platform</title>
-
   <meta name="description" content="HADIYANA is an AI-powered event-planning platform with a built-in multi-vendor marketplace — bilingual, WhatsApp-first, and designed for everyone living in the UAE." />
-  <meta name="theme-color" content="#6E1535" />
-
-  <!-- Open Graph -->
+  <meta name="theme-color" content="#4A0E24" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="HADIYANA — The Modern Way the UAE Celebrates" />
   <meta property="og:description" content="AI-powered event platform with a built-in multi-vendor marketplace, designed for the UAE." />
   <meta property="og:site_name" content="HADIYANA" />
   <meta property="og:image" content="assets/img/og-image.png" />
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="HADIYANA — The Modern Way the UAE Celebrates" />
   <meta name="twitter:description" content="AI-powered event platform with a built-in multi-vendor marketplace, designed for the UAE." />
-  <meta name="twitter:image" content="assets/img/og-image.png" />
-
-  <!-- Favicon placeholder (inline SVG) -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236E1535'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23B8924A' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- rtl.css is loaded dynamically by main.js when AR mode is active -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 
-  <!-- ============ HEADER / NAV (4.1) ============ -->
-  <header class="site-header" id="siteHeader" data-reveal-skip>
+  <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="HADIYANA home">
+      <a class="brand" href="index.html" aria-label="HADIYANA home">
         <span class="brand__name">HADIYANA</span>
         <span class="brand__credit">by Arkanet</span>
       </a>
-
       <nav class="nav" id="primaryNav" aria-label="Primary">
         <button class="nav__close" id="navClose" aria-label="Close menu">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
-        <a href="#home">Home</a>
-        <a href="#how">How It Works</a>
-        <a href="#features">Features</a>
-        <a href="#marketplace">Marketplace</a>
-        <a href="#vendors">For Vendors</a>
-        <a href="#revenue">Revenue</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-
+        <a href="index.html" class="is-current" data-ar="الرئيسية">Home</a>
+        <a href="features.html" data-ar="المميزات">Features</a>
+        <a href="marketplace.html" data-ar="السوق">Marketplace</a>
+        <a href="investors.html" data-ar="للمستثمرين">Investors</a>
+        <a href="about.html" data-ar="من نحن">About</a>
+        <a href="contact.html" data-ar="تواصل معنا">Contact</a>
         <div class="nav__actions">
           <button class="lang-toggle" id="langToggle" aria-label="Switch language" aria-pressed="false">
             <span class="lang-toggle__opt is-active" data-lang="en">EN</span>
             <span class="lang-toggle__sep">/</span>
             <span class="lang-toggle__opt" data-lang="ar">ع</span>
           </button>
-          <a class="btn btn--gold nav__cta" href="#contact">Request a Demo</a>
+          <a class="btn btn--gold" href="contact.html" data-ar="اطلب عرضاً">Request a Demo</a>
         </div>
       </nav>
-
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
-
   <div class="nav-scrim" id="navScrim" hidden></div>
 
   <main id="main">
-    <!-- ============ HERO (4.2) ============ -->
-    <section class="hero" id="home">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="grain" aria-hidden="true"></div>
+
       <div class="container hero__grid">
-        <div class="hero__text" data-reveal>
-          <p class="hero__tagline">Plan · Share · Celebrate · Gift · Grow</p>
-          <h1 class="hero__title">The modern way the<br><em>UAE celebrates.</em></h1>
-          <p class="hero__sub">AI-powered event platform with a built-in multi-vendor marketplace — designed for everyone living in the UAE.</p>
+        <div class="stagger">
+          <p class="hero-pill"><span class="pulse" aria-hidden="true"></span> Launching across the UAE</p>
+          <h1 class="hero__title">The modern way the <span class="grad-text">UAE celebrates.</span></h1>
+          <p class="hero__sub">AI-powered event platform with a built-in multi-vendor marketplace — designed for everyone living in the UAE. Plan, share, celebrate, gift, and grow from one elegant place.</p>
           <div class="hero__cta">
-            <a class="btn btn--gold btn--lg" href="#contact">Request a Demo</a>
-            <a class="btn btn--ghost btn--lg" href="#features">Explore Features
+            <a class="btn btn--gold btn--lg" href="contact.html">Request a Demo
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
+            <a class="btn btn--ghost-light btn--lg" href="features.html">Explore Features</a>
           </div>
-          <ul class="trust-strip" aria-label="Key capabilities">
-            <li>Bilingual (AR / EN)</li>
-            <li>WhatsApp-first</li>
-            <li>Hijri calendar</li>
-            <li>UAE-native payments</li>
-          </ul>
+          <div class="hero-stats">
+            <div class="hero-stat"><div class="hero-stat__num"><span data-countup data-target="10" data-suffix="M">0</span></div><div class="hero-stat__label">UAE residents</div></div>
+            <div class="hero-stat"><div class="hero-stat__num"><span data-countup data-target="16" data-suffix="">0</span></div><div class="hero-stat__label">Platform modules</div></div>
+            <div class="hero-stat"><div class="hero-stat__num"><span data-countup data-target="8" data-suffix="">0</span></div><div class="hero-stat__label">Signature features</div></div>
+          </div>
         </div>
 
-        <!-- Hero visual: SVG phone-mockup placeholder.
-             SWAP POINT: replace this block with <img src="assets/img/hero.jpg" alt="…"> -->
-        <div class="hero__visual" data-reveal aria-hidden="true">
-          <div class="hero__glow"></div>
+        <!-- Hero visual — SWAP POINT: replace with <img src="assets/img/hero.jpg" alt="…"> -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="orbit-ring"></div>
           <div class="phone">
             <div class="phone__notch"></div>
             <div class="phone__screen">
-              <div class="mock-card mock-card--head">
-                <span class="mock-eyebrow">Walima · Nikah</span>
-                <span class="mock-title">Sara &amp; Omar</span>
-                <span class="mock-meta">Dubai · 12 Shawwal</span>
-              </div>
+              <span class="mock-eyebrow">Walima · Nikah</span>
+              <span class="mock-title">Sara &amp; Omar</span>
+              <span class="mock-meta">Dubai · 12 Shawwal</span>
               <div class="mock-row"><span class="mock-dot"></span> 312 guests confirmed</div>
               <div class="mock-row"><span class="mock-dot mock-dot--gold"></span> Gift registry · 64% claimed</div>
-              <div class="mock-bar"><span style="width:78%"></span></div>
-              <div class="mock-chip-row">
+              <div class="mock-bar"><span></span></div>
+              <div class="mock-chips">
                 <span class="mock-chip">RSVP</span>
                 <span class="mock-chip">Gift</span>
                 <span class="mock-chip mock-chip--solid">Share on WhatsApp</span>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PROBLEM → SOLUTION (4.3) ============ -->
-    <section class="section" id="why" aria-labelledby="why-title">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="badge"><span class="badge__num">01</span></span>
-          <div>
-            <p class="eyebrow">Why it exists</p>
-            <h2 class="section-title" id="why-title">The problem, and the one thing that fixes it</h2>
+          <div class="glass-card glass-card--1">
+            <span class="glass-card__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span>312 RSVPs<small>confirmed in real time</small></span>
+          </div>
+          <div class="glass-card glass-card--2">
+            <span class="glass-card__icon"><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7"/></svg></span>
+            <span>Gift received<small>AED 1,200 · Crystal set</small></span>
+          </div>
+          <div class="glass-card glass-card--3">
+            <span class="glass-card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+            <span>Hijri reminder<small>Henna night · 10 Shawwal</small></span>
           </div>
         </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"></div>
+    </section>
 
-        <div class="contrast">
-          <article class="contrast__card contrast__card--problem" data-reveal>
-            <h3 class="contrast__label">The problem</h3>
-            <p class="contrast__lead">Planning a UAE event today means juggling 8+ tools.</p>
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-label="Event types supported">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span class="marquee__item">Islamic Weddings</span><span class="marquee__item">Henna Nights</span><span class="marquee__item">Nikah</span><span class="marquee__item">Walima</span><span class="marquee__item">Engagements</span><span class="marquee__item">Aqiqah</span><span class="marquee__item">Graduations</span><span class="marquee__item">Eid</span><span class="marquee__item">Diwali</span><span class="marquee__item">Corporate Majlis</span>
+        </div>
+        <div class="marquee__group" aria-hidden="true">
+          <span class="marquee__item">Islamic Weddings</span><span class="marquee__item">Henna Nights</span><span class="marquee__item">Nikah</span><span class="marquee__item">Walima</span><span class="marquee__item">Engagements</span><span class="marquee__item">Aqiqah</span><span class="marquee__item">Graduations</span><span class="marquee__item">Eid</span><span class="marquee__item">Diwali</span><span class="marquee__item">Corporate Majlis</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PROBLEM → SOLUTION ============ -->
+    <section class="section" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Why it exists</p>
+          <h2 class="section-title" id="why-title">One platform replaces the chaos</h2>
+          <p class="section-sub">Planning a UAE event today means juggling 8+ tools. HADIYANA brings everything into one calm, elegant workspace.</p>
+        </div>
+        <div class="contrast" data-reveal-group>
+          <article class="contrast__card contrast__card--problem">
+            <h3 class="contrast__label">Today</h3>
+            <p class="contrast__lead">Eight tools, endless friction.</p>
             <ul class="contrast__list">
               <li>WhatsApp groups and endless message threads</li>
               <li>Spreadsheets for guest lists and budgets</li>
@@ -142,13 +147,8 @@
               <li>Paper invites and separate RSVP apps</li>
             </ul>
           </article>
-
-          <div class="contrast__arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </div>
-
-          <article class="contrast__card contrast__card--solution" data-reveal>
-            <h3 class="contrast__label">The solution</h3>
+          <article class="contrast__card contrast__card--solution">
+            <h3 class="contrast__label">With HADIYANA</h3>
             <p class="contrast__lead">One platform. Everything in its place.</p>
             <ul class="contrast__list">
               <li>Hosts plan, share, and track in one workspace</li>
@@ -161,584 +161,116 @@
       </div>
     </section>
 
-    <!-- ============ UAE OPPORTUNITY — STATS BAND (4.4) ============ -->
-    <section class="stats-band" id="opportunity" aria-labelledby="opportunity-title">
+    <!-- ============ THREE PILLARS ============ -->
+    <section class="section section--cream" aria-labelledby="pillars-title">
       <div class="container">
-        <div class="stats-band__head" data-reveal>
-          <p class="eyebrow eyebrow--gold">The UAE opportunity</p>
-          <h2 class="section-title section-title--light" id="opportunity-title">A market built for this moment</h2>
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">What HADIYANA does</p>
+          <h2 class="section-title" id="pillars-title">Three pillars, one celebration</h2>
         </div>
-        <dl class="stats" data-reveal>
-          <div class="stat">
-            <dt class="stat__num"><span data-countup data-target="10" data-suffix="M">0</span></dt>
-            <dd class="stat__label">UAE residents</dd>
-          </div>
-          <div class="stat">
-            <dt class="stat__num"><span data-countup data-target="88" data-suffix="%">0</span></dt>
-            <dd class="stat__label">Expat population</dd>
-          </div>
-          <div class="stat">
-            <dt class="stat__num">AED <span data-countup data-target="50" data-suffix="K">0</span>–500K</dt>
-            <dd class="stat__label">Avg. event spend</dd>
-          </div>
-          <div class="stat">
-            <dt class="stat__num"><span data-countup data-target="150" data-suffix="">0</span>–500</dt>
-            <dd class="stat__label">Guests, typical event</dd>
-          </div>
-          <div class="stat">
-            <dt class="stat__num">~<span data-countup data-target="5" data-suffix="x">0</span></dt>
-            <dd class="stat__label">GCC expansion potential</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- ============ THREE PILLARS (4.5) ============ -->
-    <section class="section section--cream" id="pillars" aria-labelledby="pillars-title">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="badge"><span class="badge__num">02</span></span>
-          <div>
-            <p class="eyebrow">What HADIYANA does</p>
-            <h2 class="section-title" id="pillars-title">Three pillars, one celebration</h2>
-          </div>
-        </div>
-
-        <div class="cards-3">
-          <article class="pillar" data-reveal>
-            <div class="pillar__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
-            </div>
-            <h3 class="pillar__title">Plan &amp; Share</h3>
-            <p class="pillar__body">Bilingual event pages, multi-stage wedding flows, WhatsApp invites, RSVPs, and complete guest management.</p>
+        <div class="cards-3" data-reveal-group>
+          <article class="card" data-tilt>
+            <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+            <h3>Plan &amp; Share</h3>
+            <p>Bilingual event pages, multi-stage wedding flows, WhatsApp invites, RSVPs, and complete guest management.</p>
           </article>
-          <article class="pillar" data-reveal>
-            <div class="pillar__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S10 2 6.5 4 8 7 12 7zM12 7s2-5 5.5-3S16 7 12 7z"/></svg>
-            </div>
-            <h3 class="pillar__title">Gift &amp; Shop</h3>
-            <p class="pillar__body">An intelligent gift registry connected to a real, curated multi-vendor marketplace — buy and gift in seconds.</p>
+          <article class="card" data-tilt>
+            <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S10 2 6.5 4 8 7 12 7zM12 7s2-5 5.5-3S16 7 12 7z"/></svg></div>
+            <h3>Gift &amp; Shop</h3>
+            <p>An intelligent gift registry connected to a real, curated multi-vendor marketplace — buy and gift in seconds.</p>
           </article>
-          <article class="pillar" data-reveal>
-            <div class="pillar__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v6h-6"/></svg>
-            </div>
-            <h3 class="pillar__title">Grow &amp; Reuse</h3>
-            <p class="pillar__body">An AI co-pilot, automated exports, event-master reuse, and a built-in viral invite mechanic that compounds.</p>
+          <article class="card" data-tilt>
+            <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v6h-6"/></svg></div>
+            <h3>Grow &amp; Reuse</h3>
+            <p>An AI co-pilot, automated exports, event-master reuse, and a built-in viral invite mechanic that compounds.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ WHO IT'S FOR (4.6) ============ -->
-    <section class="section" id="audience" aria-labelledby="audience-title">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="badge"><span class="badge__num">03</span></span>
-          <div>
-            <p class="eyebrow">Who it's for</p>
-            <h2 class="section-title" id="audience-title">Benefits for every user</h2>
-          </div>
-        </div>
-
-        <div class="tabs" data-reveal>
-          <div class="tabs__list" role="tablist" aria-label="Audiences">
-            <button class="tabs__tab is-active" role="tab" aria-selected="true" id="tab-hosts" aria-controls="panel-hosts">Hosts</button>
-            <button class="tabs__tab" role="tab" aria-selected="false" id="tab-guests" aria-controls="panel-guests">Guests</button>
-            <button class="tabs__tab" role="tab" aria-selected="false" id="tab-vendors" aria-controls="panel-vendors">Vendors</button>
-            <button class="tabs__tab" role="tab" aria-selected="false" id="tab-admin" aria-controls="panel-admin">Admin</button>
-          </div>
-
-          <div class="tabs__panel is-active" role="tabpanel" id="panel-hosts" aria-labelledby="tab-hosts">
-            <ul class="benefit-list">
-              <li>Plan the entire event from a single, calm workspace.</li>
-              <li>Beautiful bilingual event pages, ready in minutes.</li>
-              <li>Real-time RSVPs, seating, and guest management.</li>
-              <li>Track budgets, vendors, and gifts without spreadsheets.</li>
-            </ul>
-          </div>
-          <div class="tabs__panel" role="tabpanel" id="panel-guests" aria-labelledby="tab-guests" hidden>
-            <ul class="benefit-list">
-              <li>RSVP in seconds — no app download required.</li>
-              <li>Gift and pay securely from a curated registry.</li>
-              <li>Everything arrives where you already are: WhatsApp.</li>
-              <li>Fully bilingual, with Hijri and Gregorian dates.</li>
-            </ul>
-          </div>
-          <div class="tabs__panel" role="tabpanel" id="panel-vendors" aria-labelledby="tab-vendors" hidden>
-            <ul class="benefit-list">
-              <li>Reach pre-qualified buyers actively planning events.</li>
-              <li>Manage bookings, availability, and pricing in one place.</li>
-              <li>Get paid securely with UAE-native settlement.</li>
-              <li>Grow with featured placements and registry demand.</li>
-            </ul>
-          </div>
-          <div class="tabs__panel" role="tabpanel" id="panel-admin" aria-labelledby="tab-admin" hidden>
-            <ul class="benefit-list">
-              <li>Full oversight across hosts, vendors, and orders.</li>
-              <li>Vendor verification and quality control built in.</li>
-              <li>Live analytics on growth, GMV, and engagement.</li>
-              <li>Privacy and compliance designed for the region.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ EVENT TYPES (4.7) ============ -->
-    <section class="section section--cream" id="event-types" aria-labelledby="event-types-title">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="badge"><span class="badge__num">04</span></span>
-          <div>
-            <p class="eyebrow">Every occasion</p>
-            <h2 class="section-title" id="event-types-title">Event types supported</h2>
-          </div>
-        </div>
-        <ul class="pills" data-reveal>
-          <li>Islamic weddings — Milcha</li>
-          <li>Henna</li>
-          <li>Nikah</li>
-          <li>Walima</li>
-          <li>Christian &amp; civil weddings</li>
-          <li>Engagements</li>
-          <li>Aqiqah &amp; baby showers</li>
-          <li>Graduations</li>
-          <li>Birthdays</li>
-          <li>Eid</li>
-          <li>Diwali</li>
-          <li>Christmas</li>
-          <li>Chinese New Year</li>
-          <li>Corporate &amp; majlis</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============ FEATURES — 16 MODULES (4.8) ============ -->
-    <section class="section" id="features" aria-labelledby="features-title">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="badge"><span class="badge__num">05</span></span>
-          <div>
-            <p class="eyebrow">The platform</p>
-            <h2 class="section-title" id="features-title">Sixteen modules, one seamless flow</h2>
-          </div>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature" data-reveal><span class="feature__num">01</span><h3>Event Builder</h3><p>Compose any celebration from elegant, ready-made templates.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">02</span><h3>Bilingual Event Pages</h3><p>Beautiful AR/EN pages with full RTL support, out of the box.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">03</span><h3>RSVP Management</h3><p>Live responses, dietary notes, and plus-ones, all in one view.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">04</span><h3>Guests &amp; Seating</h3><p>Drag-and-drop seating, groups, and capacity at a glance.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">05</span><h3>WhatsApp Invitations</h3><p>Send and track invites where your guests already are.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">06</span><h3>Gift Registry</h3><p>An intelligent registry linked to real, purchasable products.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">07</span><h3>Vendor Marketplace</h3><p>Discover, compare, and book verified UAE vendors in-app.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">08</span><h3>Payments &amp; Checkout</h3><p>UAE-native payment rails with secure, instant settlement.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">09</span><h3>Hijri &amp; Gregorian Calendar</h3><p>Dual calendars, prayer-aware timing, and smart reminders.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">10</span><h3>Multi-Stage Weddings</h3><p>Milcha to Walima — linked events, one guest journey.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">11</span><h3>AI Co-Pilot</h3><p>Drafts copy, suggests vendors, and answers guest questions.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">12</span><h3>Privacy &amp; Ladies-Only</h3><p>Granular visibility and a dedicated ladies-only mode.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">13</span><h3>Smart Address</h3><p>Makani &amp; Onwani codes so guests never get lost.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">14</span><h3>Analytics &amp; Insights</h3><p>Attendance, gifting, and spend trends in real time.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">15</span><h3>Automated Exports</h3><p>One-click CSV exports for guests, gifts, and budgets.</p></article>
-          <article class="feature" data-reveal><span class="feature__num">16</span><h3>Event Master Reuse</h3><p>Save any event as a master and relaunch it in a tap.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ AI CO-PILOT (4.9) ============ -->
-    <section class="section section--ink" id="ai" aria-labelledby="ai-title">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="badge badge--gold"><span class="badge__num">06</span></span>
-          <div>
-            <p class="eyebrow eyebrow--gold">Signature</p>
-            <h2 class="section-title section-title--light" id="ai-title">An AI co-pilot for everyone</h2>
-          </div>
-        </div>
-
-        <div class="cards-3 cards-3--ai">
-          <article class="ai-col" data-reveal>
-            <h3 class="ai-col__title">For Hosts</h3>
-            <ul class="ai-list">
-              <li>Draft invitations and event copy in AR &amp; EN.</li>
-              <li>Recommend vendors that fit your budget and style.</li>
-              <li>Auto-build timelines and checklists.</li>
-            </ul>
-          </article>
-          <article class="ai-col" data-reveal>
-            <h3 class="ai-col__title">For Guests</h3>
-            <ul class="ai-list">
-              <li>Answer questions about timing, dress, and location.</li>
-              <li>Suggest thoughtful gifts from the registry.</li>
-              <li>Translate and guide in the guest's language.</li>
-            </ul>
-          </article>
-          <article class="ai-col" data-reveal>
-            <h3 class="ai-col__title">For Vendors</h3>
-            <ul class="ai-list">
-              <li>Write polished listings and respond to enquiries.</li>
-              <li>Forecast demand around the events calendar.</li>
-              <li>Surface upsell and bundle opportunities.</li>
-            </ul>
-          </article>
-        </div>
-
-        <h3 class="ai-sub" data-reveal>Eight signature features</h3>
-        <ul class="sig-grid" data-reveal>
-          <li><span class="sig__dot"></span>Full Arabic + RTL</li>
-          <li><span class="sig__dot"></span>WhatsApp-First Invites</li>
-          <li><span class="sig__dot"></span>Hijri Calendar</li>
-          <li><span class="sig__dot"></span>UAE-Native Payments</li>
-          <li><span class="sig__dot"></span>Multi-Stage Weddings</li>
-          <li><span class="sig__dot"></span>Privacy-First</li>
-          <li><span class="sig__dot"></span>Smart Address (Makani / Onwani)</li>
-          <li><span class="sig__dot"></span>Buy-Now Invitations</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============ MARKETPLACE (4.10) ============ -->
-    <section class="section section--cream" id="marketplace" aria-labelledby="marketplace-title">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="badge"><span class="badge__num">07</span></span>
-          <div>
-            <p class="eyebrow">The ecosystem</p>
-            <h2 class="section-title" id="marketplace-title">A real multi-vendor marketplace</h2>
-          </div>
-        </div>
-
-        <div class="market-cols">
-          <article class="market-card" data-reveal>
-            <h3 class="market-card__title">Services offered</h3>
-            <ul class="check-list">
-              <li>Venues &amp; halls</li>
-              <li>Catering &amp; sweets</li>
-              <li>Photography &amp; videography</li>
-              <li>Décor &amp; floral design</li>
-              <li>Entertainment &amp; MCs</li>
-              <li>Beauty &amp; henna artists</li>
-              <li>Transport &amp; valet</li>
-              <li>Planning &amp; coordination</li>
-            </ul>
-          </article>
-          <article class="market-card" data-reveal>
-            <h3 class="market-card__title">Products offered</h3>
-            <ul class="check-list">
-              <li>Gift registry items</li>
-              <li>Luxury hampers &amp; gifting</li>
-              <li>Custom digital invitations</li>
-              <li>Cakes &amp; dessert tables</li>
-              <li>Attire &amp; abayas</li>
-              <li>Home &amp; lifestyle</li>
-              <li>Jewelry &amp; accessories</li>
-              <li>Gift cards</li>
-            </ul>
-          </article>
-        </div>
-
-        <!-- Vendor onboarding stepper (also anchor for "For Vendors") -->
-        <div id="vendors" class="vendor-onboarding" data-reveal>
-          <h3 class="market-sub">Vendor onboarding in 8 steps</h3>
-          <ol class="stepper">
-            <li><span class="stepper__n">1</span>Apply online</li>
-            <li><span class="stepper__n">2</span>Verify trade licence</li>
-            <li><span class="stepper__n">3</span>Build your profile</li>
-            <li><span class="stepper__n">4</span>List services &amp; products</li>
-            <li><span class="stepper__n">5</span>Set pricing &amp; availability</li>
-            <li><span class="stepper__n">6</span>Pass quality review</li>
-            <li><span class="stepper__n">7</span>Go live</li>
-            <li><span class="stepper__n">8</span>Get booked</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ HOW IT WORKS / LIFECYCLE (4.11) ============ -->
+    <!-- ============ HOW IT WORKS ============ -->
     <section class="section" id="how" aria-labelledby="how-title">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="badge"><span class="badge__num">08</span></span>
-          <div>
-            <p class="eyebrow">The lifecycle</p>
-            <h2 class="section-title" id="how-title">How it works, end to end</h2>
-          </div>
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">The lifecycle</p>
+          <h2 class="section-title" id="how-title">How it works, end to end</h2>
         </div>
-
-        <ol class="timeline" data-reveal>
-          <li class="tl-step">
-            <span class="tl-step__n">01</span>
-            <h3>30 days free</h3>
-            <p>Plan your full event with every feature unlocked, no card required.</p>
-          </li>
-          <li class="tl-step">
-            <span class="tl-step__n">02</span>
-            <h3>Auto CSV export</h3>
-            <p>Guest lists, gifts, and budgets export automatically as you go.</p>
-          </li>
-          <li class="tl-step">
-            <span class="tl-step__n">03</span>
-            <h3>Closure reminder</h3>
-            <p>A gentle nudge to wrap up, thank guests, and reconcile gifts.</p>
-          </li>
-          <li class="tl-step">
-            <span class="tl-step__n">04</span>
-            <h3>Save as master</h3>
-            <p>Turn any finished event into a reusable, branded template.</p>
-          </li>
-          <li class="tl-step">
-            <span class="tl-step__n">05</span>
-            <h3>Reuse anytime</h3>
-            <p>Relaunch for the next occasion in a single tap.</p>
-          </li>
+        <ol class="timeline" data-reveal-group>
+          <li class="tl-step"><span class="tl-step__n">01</span><h3>30 days free</h3><p>Plan your full event with every feature unlocked, no card required.</p></li>
+          <li class="tl-step"><span class="tl-step__n">02</span><h3>Auto CSV export</h3><p>Guest lists, gifts, and budgets export automatically as you go.</p></li>
+          <li class="tl-step"><span class="tl-step__n">03</span><h3>Closure reminder</h3><p>A gentle nudge to wrap up, thank guests, and reconcile gifts.</p></li>
+          <li class="tl-step"><span class="tl-step__n">04</span><h3>Save as master</h3><p>Turn any finished event into a reusable, branded template.</p></li>
+          <li class="tl-step"><span class="tl-step__n">05</span><h3>Reuse anytime</h3><p>Relaunch for the next occasion in a single tap.</p></li>
         </ol>
       </div>
     </section>
 
-    <!-- ============ VIRAL GROWTH (4.12) ============ -->
-    <section class="section section--cream" id="growth" aria-labelledby="growth-title">
+    <!-- ============ STATS BAND ============ -->
+    <section class="stats-band section" aria-labelledby="opportunity-title">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="badge"><span class="badge__num">09</span></span>
-          <div>
-            <p class="eyebrow">Built-in growth</p>
-            <h2 class="section-title" id="growth-title">The viral mechanic</h2>
-          </div>
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">The UAE opportunity</p>
+          <h2 class="section-title section-title--light" id="opportunity-title">A market built for this moment</h2>
         </div>
-
-        <div class="flow" data-reveal>
-          <div class="flow__node"><span class="flow__big">1</span><span class="flow__cap">Event</span></div>
-          <div class="flow__link" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="flow__node"><span class="flow__big">300</span><span class="flow__cap">Impressions</span></div>
-          <div class="flow__link" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="flow__node"><span class="flow__big">10–30</span><span class="flow__cap">New hosts</span></div>
-        </div>
-
-        <blockquote class="pullquote" data-reveal>
-          <p>“One host with 300 guests = 300 marketing impressions. 1,000 monthly events = <em>300,000 impressions</em> at zero cost.”</p>
-        </blockquote>
+        <dl class="stats" data-reveal-group>
+          <div class="stat"><dt class="stat__num"><span data-countup data-target="10" data-suffix="M">0</span></dt><dd class="stat__label">UAE residents</dd></div>
+          <div class="stat"><dt class="stat__num"><span data-countup data-target="88" data-suffix="%">0</span></dt><dd class="stat__label">Expat population</dd></div>
+          <div class="stat"><dt class="stat__num">AED <span data-countup data-target="50" data-suffix="K">0</span>–500K</dt><dd class="stat__label">Avg. event spend</dd></div>
+          <div class="stat"><dt class="stat__num"><span data-countup data-target="150" data-suffix="">0</span>–500</dt><dd class="stat__label">Guests, typical event</dd></div>
+          <div class="stat"><dt class="stat__num">~<span data-countup data-target="5" data-suffix="x">0</span></dt><dd class="stat__label">GCC expansion potential</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ============ REVENUE (4.13) ============ -->
-    <section class="section" id="revenue" aria-labelledby="revenue-title">
+    <!-- ============ FEATURE TEASER ============ -->
+    <section class="section section--cream" aria-labelledby="teaser-title">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="badge"><span class="badge__num">10</span></span>
-          <div>
-            <p class="eyebrow">For investors</p>
-            <h2 class="section-title" id="revenue-title">Eight revenue streams</h2>
-          </div>
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">The platform</p>
+          <h2 class="section-title" id="teaser-title">Sixteen modules, one seamless flow</h2>
+          <p class="section-sub">From the first invitation to the final thank-you — event builder, RSVP, gift registry, marketplace, payments, AI co-pilot, and more.</p>
         </div>
-
-        <div class="table-wrap" data-reveal>
-          <table class="rev-table">
-            <thead>
-              <tr><th scope="col">Stream</th><th scope="col">How it earns</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">Marketplace commission</th><td>A transparent take-rate on bookings and product sales.</td></tr>
-              <tr><th scope="row">Vendor subscriptions</th><td>Tiered monthly plans for storefront and tooling access.</td></tr>
-              <tr><th scope="row">Featured placements</th><td>Promoted listings and category sponsorships for vendors.</td></tr>
-              <tr><th scope="row">Premium host plans</th><td>Advanced features for large and multi-stage events.</td></tr>
-              <tr><th scope="row">Payment margin</th><td>A small spread on UAE-native payment processing.</td></tr>
-              <tr><th scope="row">Gift registry fees</th><td>Service fee on fulfilled registry gifting.</td></tr>
-              <tr><th scope="row">Digital invitations</th><td>Premium, designer invitation templates and add-ons.</td></tr>
-              <tr><th scope="row">Insights &amp; partnerships</th><td>Privacy-safe, aggregate market insights for partners.</td></tr>
-            </tbody>
-          </table>
+        <div class="cards-4" data-reveal-group>
+          <article class="card"><span class="card__num">01</span><h3>Event Builder</h3><p>Elegant, ready-made templates for any celebration.</p></article>
+          <article class="card"><span class="card__num">05</span><h3>WhatsApp Invites</h3><p>Send and track invites where guests already are.</p></article>
+          <article class="card"><span class="card__num">06</span><h3>Gift Registry</h3><p>Linked to real, purchasable marketplace products.</p></article>
+          <article class="card"><span class="card__num">11</span><h3>AI Co-Pilot</h3><p>Drafts copy, suggests vendors, answers guests.</p></article>
         </div>
+        <p style="text-align:center; margin-top:36px;" data-reveal>
+          <a class="btn btn--ghost btn--lg" href="features.html">See all 16 modules
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </p>
       </div>
     </section>
 
-    <!-- ============ WHY HADIYANA (4.14) ============ -->
-    <section class="section section--cream" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="badge"><span class="badge__num">11</span></span>
-          <div>
-            <p class="eyebrow">The advantage</p>
-            <h2 class="section-title" id="about-title">Why HADIYANA</h2>
-          </div>
-        </div>
-
-        <div class="why-grid">
-          <article class="why-card" data-reveal>
-            <h3>Cultural alignment</h3>
-            <p>Arabic-first, RTL-native, and respectful of regional customs — not a translated afterthought.</p>
-          </article>
-          <article class="why-card" data-reveal>
-            <h3>Premium positioning</h3>
-            <p>An elegant, restrained experience that matches the way the UAE celebrates.</p>
-          </article>
-          <article class="why-card" data-reveal>
-            <h3>Vendor-driven ecosystem</h3>
-            <p>A real marketplace that turns every event into commerce and every vendor into a partner.</p>
-          </article>
-          <article class="why-card" data-reveal>
-            <h3>WhatsApp-first engagement</h3>
-            <p>We meet guests where they already are, removing every barrier to RSVP and gifting.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FAQ (4.15) ============ -->
-    <section class="section" id="faq" aria-labelledby="faq-title">
-      <div class="container container--narrow">
-        <div class="section-head" data-reveal>
-          <span class="badge"><span class="badge__num">12</span></span>
-          <div>
-            <p class="eyebrow">Questions</p>
-            <h2 class="section-title" id="faq-title">Frequently asked</h2>
-          </div>
-        </div>
-
-        <div class="accordion" data-reveal>
-          <div class="acc-item">
-            <h3>
-              <button class="acc__trigger" aria-expanded="false">Is HADIYANA free for hosts?
-                <span class="acc__icon" aria-hidden="true"></span></button>
-            </h3>
-            <div class="acc__panel" hidden><p>Yes — hosts plan a complete event free for 30 days with every feature unlocked. Premium plans add tools for large and multi-stage events.</p></div>
-          </div>
-          <div class="acc-item">
-            <h3>
-              <button class="acc__trigger" aria-expanded="false">Do guests need to download an app?
-                <span class="acc__icon" aria-hidden="true"></span></button>
-            </h3>
-            <div class="acc__panel" hidden><p>Never. Guests RSVP, gift, and pay straight from a link — most often shared over WhatsApp. No app, no account required.</p></div>
-          </div>
-          <div class="acc-item">
-            <h3>
-              <button class="acc__trigger" aria-expanded="false">Which payments are supported?
-                <span class="acc__icon" aria-hidden="true"></span></button>
-            </h3>
-            <div class="acc__panel" hidden><p>HADIYANA uses UAE-native payment rails, supporting major local and international cards with secure, instant settlement for vendors.</p></div>
-          </div>
-          <div class="acc-item">
-            <h3>
-              <button class="acc__trigger" aria-expanded="false">What are the fees for vendors?
-                <span class="acc__icon" aria-hidden="true"></span></button>
-            </h3>
-            <div class="acc__panel" hidden><p>Vendors join with a simple subscription and a transparent marketplace commission on bookings and sales. No hidden charges.</p></div>
-          </div>
-          <div class="acc-item">
-            <h3>
-              <button class="acc__trigger" aria-expanded="false">Which languages are supported?
-                <span class="acc__icon" aria-hidden="true"></span></button>
-            </h3>
-            <div class="acc__panel" hidden><p>HADIYANA is fully bilingual in Arabic and English with complete right-to-left support across every screen and document.</p></div>
-          </div>
-          <div class="acc-item">
-            <h3>
-              <button class="acc__trigger" aria-expanded="false">How is privacy handled? Is there a ladies-only mode?
-                <span class="acc__icon" aria-hidden="true"></span></button>
-            </h3>
-            <div class="acc__panel" hidden><p>Privacy is granular and on by default. Hosts control exactly who sees what, including a dedicated ladies-only mode for relevant events.</p></div>
-          </div>
-          <div class="acc-item">
-            <h3>
-              <button class="acc__trigger" aria-expanded="false">Is HADIYANA available across the GCC?
-                <span class="acc__icon" aria-hidden="true"></span></button>
-            </h3>
-            <div class="acc__panel" hidden><p>We are launching UAE-first, with a structure designed to expand across the GCC. Register your interest and we'll keep you posted.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CTA BAND (4.16) ============ -->
+    <!-- ============ CTA ============ -->
     <section class="cta-band" aria-labelledby="cta-title">
-      <div class="container cta-band__inner" data-reveal>
+      <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="container" data-reveal>
         <h2 class="cta-band__title" id="cta-title">Ready to see HADIYANA?</h2>
         <p class="cta-band__sub">Book a private walkthrough with our team.</p>
         <div class="cta-band__actions">
-          <a class="btn btn--gold btn--lg" href="#contact">Request a Demo</a>
-          <a class="btn btn--whatsapp btn--lg" href="https://wa.me/971509338430" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 00-7.7 13.6L3 21l4.5-1.2A9 9 0 1012 3z"/><path d="M8.5 8.8c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4l.7 1.6c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3-.1.5.2.4.6 1 1.2 1.5.7.6 1.3.8 1.6.9.2 0 .4 0 .5-.1l.6-.6c.2-.2.4-.2.6-.1l1.5.8c.3.1.4.2.4.4 0 .4-.2 1.2-.6 1.4-.4.3-1 .5-1.7.4-1-.1-2.6-.7-4-2.1-1.6-1.6-2.1-3-2.2-3.6-.1-.7 0-1.3.4-1.9z" fill="currentColor" stroke="none"/></svg>
-            WhatsApp us
-          </a>
+          <a class="btn btn--gold btn--lg" href="contact.html">Request a Demo</a>
+          <a class="btn btn--whatsapp btn--lg" href="https://wa.me/971509338430" target="_blank" rel="noopener">WhatsApp us</a>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ CONTACT / LEAD FORM (4.17) ============ -->
-    <section class="section" id="contact" aria-labelledby="contact-title">
-      <div class="container contact-grid">
-        <div class="contact-intro" data-reveal>
-          <span class="badge"><span class="badge__num">13</span></span>
-          <h2 class="section-title" id="contact-title">Request a demo</h2>
-          <p class="contact-lead">Tell us a little about you and we'll be in touch within one business day.</p>
-          <ul class="contact-details">
-            <li><span>Web</span><a href="https://www.arkanet.ae" target="_blank" rel="noopener">www.arkanet.ae</a></li>
-            <li><span>Email</span><a href="mailto:info@arkanet.ae">info@arkanet.ae</a></li>
-            <li><span>Phone</span><a href="tel:+971509338430">+971 50 933 8430</a></li>
-            <li><span>Office</span>Dubai, United Arab Emirates</li>
-          </ul>
-        </div>
-
-        <!-- FORM: client-side validation only.
-             SWAP POINT: set action="" to your real endpoint and remove the JS stub handler in js/main.js. -->
-        <form class="lead-form" id="leadForm" action="mailto:info@arkanet.ae" method="post" novalidate data-reveal>
-          <div class="field">
-            <label for="f-name">Full name</label>
-            <input type="text" id="f-name" name="name" autocomplete="name" required />
-            <span class="field__error" data-error-for="f-name"></span>
-          </div>
-          <div class="field">
-            <label for="f-email">Email</label>
-            <input type="email" id="f-email" name="email" autocomplete="email" required />
-            <span class="field__error" data-error-for="f-email"></span>
-          </div>
-          <div class="field">
-            <label for="f-phone">Phone (UAE)</label>
-            <input type="tel" id="f-phone" name="phone" inputmode="tel" placeholder="+971 5X XXX XXXX" pattern="^\+?9715[0-9]{8}$|^05[0-9]{8}$" required />
-            <span class="field__error" data-error-for="f-phone"></span>
-          </div>
-          <div class="field">
-            <label for="f-role">I am a…</label>
-            <div class="select-wrap">
-              <select id="f-role" name="role" required>
-                <option value="" selected disabled>Select one</option>
-                <option>Host</option>
-                <option>Vendor</option>
-                <option>Investor</option>
-                <option>Partner</option>
-              </select>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-            <span class="field__error" data-error-for="f-role"></span>
-          </div>
-          <div class="field field--full">
-            <label for="f-msg">Message</label>
-            <textarea id="f-msg" name="message" rows="4"></textarea>
-          </div>
-          <div class="field field--full">
-            <button class="btn btn--gold btn--lg btn--block" type="submit">Send request</button>
-          </div>
-          <p class="form-success" id="formSuccess" hidden role="status">
-            Thank you — your request has been received. Our team will reach out within one business day.
-          </p>
-        </form>
       </div>
     </section>
   </main>
 
-  <!-- ============ FOOTER (4.18) ============ -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
         <span class="brand__name brand__name--footer">HADIYANA</span>
         <p>The modern way the UAE celebrates. An AI-powered event platform with a built-in multi-vendor marketplace.</p>
       </div>
-      <nav class="footer-col" aria-label="Quick links">
+      <nav class="footer-col" aria-label="Explore">
         <h4>Explore</h4>
-        <a href="#features">Features</a>
-        <a href="#marketplace">Marketplace</a>
-        <a href="#vendors">For Vendors</a>
-        <a href="#revenue">Revenue</a>
+        <a href="features.html">Features</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="marketplace.html#vendors">For Vendors</a>
+        <a href="investors.html">Investors</a>
       </nav>
       <div class="footer-col">
         <h4>Contact</h4>

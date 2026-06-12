@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — HADIYANA | Request a Demo</title>
+  <meta name="description" content="Request a HADIYANA demo. Contact Arkanet Technologies — Dubai, UAE. Plus answers to frequently asked questions." />
+  <meta name="theme-color" content="#4A0E24" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact — HADIYANA" />
+  <meta property="og:description" content="Request a demo or talk to our team in Dubai." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236E1535'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23B8924A' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="HADIYANA home">
+        <span class="brand__name">HADIYANA</span>
+        <span class="brand__credit">by Arkanet</span>
+      </a>
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <button class="nav__close" id="navClose" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <a href="index.html" data-ar="الرئيسية">Home</a>
+        <a href="features.html" data-ar="المميزات">Features</a>
+        <a href="marketplace.html" data-ar="السوق">Marketplace</a>
+        <a href="investors.html" data-ar="للمستثمرين">Investors</a>
+        <a href="about.html" data-ar="من نحن">About</a>
+        <a href="contact.html" class="is-current" data-ar="تواصل معنا">Contact</a>
+        <div class="nav__actions">
+          <button class="lang-toggle" id="langToggle" aria-label="Switch language" aria-pressed="false">
+            <span class="lang-toggle__opt is-active" data-lang="en">EN</span>
+            <span class="lang-toggle__sep">/</span>
+            <span class="lang-toggle__opt" data-lang="ar">ع</span>
+          </button>
+          <a class="btn btn--gold" href="#leadForm" data-ar="اطلب عرضاً">Request a Demo</a>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim" id="navScrim" hidden></div>
+
+  <main id="main">
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="container stagger">
+        <p class="eyebrow">Contact</p>
+        <h1 class="page-hero__title">Let's plan something<br><span class="grad-text">beautiful together.</span></h1>
+        <p class="page-hero__sub">Tell us a little about you and we'll be in touch within one business day.</p>
+      </div>
+    </section>
+
+    <!-- ============ LEAD FORM ============ -->
+    <section class="section" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div data-reveal>
+          <p class="eyebrow">Request a demo</p>
+          <h2 class="section-title" id="contact-title">Talk to the team</h2>
+          <p class="contact-lead">Hosts, vendors, investors, and partners — we'd love to hear from you.</p>
+          <ul class="contact-details">
+            <li><span>Web</span><a href="https://www.arkanet.ae" target="_blank" rel="noopener">www.arkanet.ae</a></li>
+            <li><span>Email</span><a href="mailto:info@arkanet.ae">info@arkanet.ae</a></li>
+            <li><span>Phone</span><a href="tel:+971509338430">+971 50 933 8430</a></li>
+            <li><span>Office</span>Dubai, United Arab Emirates</li>
+          </ul>
+          <p style="margin-top:28px;">
+            <a class="btn btn--whatsapp" href="https://wa.me/971509338430" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </p>
+        </div>
+
+        <!-- FORM: client-side validation only.
+             SWAP POINT: point action at your real endpoint and replace the JS stub handler in js/main.js. -->
+        <form class="lead-form" id="leadForm" action="mailto:info@arkanet.ae" method="post" novalidate data-reveal>
+          <div class="field">
+            <label for="f-name">Full name</label>
+            <input type="text" id="f-name" name="name" autocomplete="name" required />
+            <span class="field__error" data-error-for="f-name"></span>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" autocomplete="email" required />
+            <span class="field__error" data-error-for="f-email"></span>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone (UAE)</label>
+            <input type="tel" id="f-phone" name="phone" inputmode="tel" placeholder="+971 5X XXX XXXX" pattern="^\+?9715[0-9]{8}$|^05[0-9]{8}$" required />
+            <span class="field__error" data-error-for="f-phone"></span>
+          </div>
+          <div class="field">
+            <label for="f-role">I am a…</label>
+            <div class="select-wrap">
+              <select id="f-role" name="role" required>
+                <option value="" selected disabled>Select one</option>
+                <option>Host</option>
+                <option>Vendor</option>
+                <option>Investor</option>
+                <option>Partner</option>
+              </select>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <span class="field__error" data-error-for="f-role"></span>
+          </div>
+          <div class="field field--full">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" name="message" rows="4"></textarea>
+          </div>
+          <div class="field field--full">
+            <button class="btn btn--gold btn--lg btn--block" type="submit">Send request</button>
+          </div>
+          <p class="form-success" id="formSuccess" hidden role="status">
+            Thank you — your request has been received. Our team will reach out within one business day.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--cream" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Questions</p>
+          <h2 class="section-title" id="faq-title">Frequently asked</h2>
+        </div>
+        <div class="accordion" data-reveal-group>
+          <div class="acc-item">
+            <h3><button class="acc__trigger" aria-expanded="false">Is HADIYANA free for hosts?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+            <div class="acc__panel" hidden><p>Yes — hosts plan a complete event free for 30 days with every feature unlocked. Premium plans add tools for large and multi-stage events.</p></div>
+          </div>
+          <div class="acc-item">
+            <h3><button class="acc__trigger" aria-expanded="false">Do guests need to download an app?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+            <div class="acc__panel" hidden><p>Never. Guests RSVP, gift, and pay straight from a link — most often shared over WhatsApp. No app, no account required.</p></div>
+          </div>
+          <div class="acc-item">
+            <h3><button class="acc__trigger" aria-expanded="false">Which payments are supported?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+            <div class="acc__panel" hidden><p>HADIYANA uses UAE-native payment rails, supporting major local and international cards with secure, instant settlement for vendors.</p></div>
+          </div>
+          <div class="acc-item">
+            <h3><button class="acc__trigger" aria-expanded="false">What are the fees for vendors?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+            <div class="acc__panel" hidden><p>Vendors join with a simple subscription and a transparent marketplace commission on bookings and sales. No hidden charges.</p></div>
+          </div>
+          <div class="acc-item">
+            <h3><button class="acc__trigger" aria-expanded="false">Which languages are supported?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+            <div class="acc__panel" hidden><p>HADIYANA is fully bilingual in Arabic and English with complete right-to-left support across every screen and document.</p></div>
+          </div>
+          <div class="acc-item">
+            <h3><button class="acc__trigger" aria-expanded="false">How is privacy handled? Is there a ladies-only mode?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+            <div class="acc__panel" hidden><p>Privacy is granular and on by default. Hosts control exactly who sees what, including a dedicated ladies-only mode for relevant events.</p></div>
+          </div>
+          <div class="acc-item">
+            <h3><button class="acc__trigger" aria-expanded="false">Is HADIYANA available across the GCC?<span class="acc__icon" aria-hidden="true"></span></button></h3>
+            <div class="acc__panel" hidden><p>We are launching UAE-first, with a structure designed to expand across the GCC. Register your interest and we'll keep you posted.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="brand__name brand__name--footer">HADIYANA</span>
+        <p>The modern way the UAE celebrates. An AI-powered event platform with a built-in multi-vendor marketplace.</p>
+      </div>
+      <nav class="footer-col" aria-label="Explore">
+        <h4>Explore</h4>
+        <a href="features.html">Features</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="marketplace.html#vendors">For Vendors</a>
+        <a href="investors.html">Investors</a>
+      </nav>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@arkanet.ae">info@arkanet.ae</a>
+        <a href="tel:+971509338430">+971 50 933 8430</a>
+        <a href="https://www.arkanet.ae" target="_blank" rel="noopener">www.arkanet.ae</a>
+        <span>Dubai, UAE</span>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <div class="socials" aria-label="Social media">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bar">
+      <p>Powered by <strong>Arkanet Technologies LLC</strong></p>
+      <p>&copy; <span id="year">2026</span> HADIYANA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
