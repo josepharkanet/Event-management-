@@ -19,10 +19,10 @@
   --line:           #E7DDD6;
   --whatsapp:       #25D366;
 
-  --serif: "Playfair Display", "Noto Naskh Arabic", Georgia, serif;
-  --sans:  "Plus Jakarta Sans", "Noto Naskh Arabic", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  /* dedicated face for figures — modern geometric, tabular, legible */
-  --num:   "Space Grotesk", "Plus Jakarta Sans", system-ui, sans-serif;
+  --serif: "Bodoni Moda", "Noto Naskh Arabic", Georgia, serif;
+  --sans:  "Hanken Grotesk", "Noto Naskh Arabic", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* figures share the high-contrast display serif — elegant lining numerals */
+  --num:   "Bodoni Moda", Georgia, serif;
 
   --radius-sm: 12px;
   --radius:    18px;
@@ -43,7 +43,8 @@ body {
   margin: 0;
   font-family: var(--sans);
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.72;
+  letter-spacing: .002em;
   color: var(--ink);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
@@ -107,10 +108,11 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .section-title--light { color: #fff; }
 .section-sub { color: var(--muted); font-size: clamp(16px, 1.5vw, 18px); margin-top: 16px; max-width: 56ch; }
 .section--ink .section-sub { color: rgba(255,255,255,.78); }
-.section-head { margin-bottom: clamp(36px, 5vw, 60px); max-width: 780px; }
+/* editorial default: section headers are centered */
+.section-head { margin: 0 auto clamp(38px, 5vw, 62px); max-width: 760px; text-align: center; }
+.section-head .eyebrow { justify-content: center; }
+.section-head .section-sub { margin-inline: auto; }
 .section-head--center { margin-inline: auto; text-align: center; }
-.section-head--center .eyebrow { justify-content: center; }
-.section-head--center .section-sub { margin-inline: auto; }
 
 .grad-text {
   background: linear-gradient(100deg, var(--champagne-gold) 20%, #E9CD96 40%, var(--champagne-gold) 60%);
@@ -277,7 +279,7 @@ body.menu-open .hamburger span { background: #fff; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
 }
 
-.hero__content { max-width: 660px; }
+.hero__content { max-width: 860px; margin-inline: auto; text-align: center; }
 .hero-pill {
   display: inline-flex; align-items: center; gap: 9px;
   padding: 8px 16px; border-radius: 999px;
@@ -290,10 +292,10 @@ body.menu-open .hamburger span { background: #fff; }
 @keyframes pulse { 0% { transform: scale(.5); opacity: 1; } 100% { transform: scale(1.4); opacity: 0; } }
 
 .hero__title { font-size: clamp(46px, 7vw, 88px); color: #fff; line-height: 1; text-shadow: 0 2px 30px rgba(0,0,0,.25); }
-.hero__sub { font-size: clamp(16.5px, 1.7vw, 20px); color: rgba(255,255,255,.84); margin-block: 24px 34px; max-width: 48ch; }
-.hero__cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px; }
+.hero__sub { font-size: clamp(16.5px, 1.7vw, 20px); color: rgba(255,255,255,.84); margin: 24px auto 34px; max-width: 52ch; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px; justify-content: center; }
 
-.hero-stats { display: flex; gap: clamp(24px, 4vw, 52px); flex-wrap: wrap; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.18); }
+.hero-stats { display: flex; gap: clamp(24px, 4vw, 52px); flex-wrap: wrap; justify-content: center; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.18); }
 .hero-stat__num { font-size: clamp(28px, 3vw, 40px); font-weight: 700; color: var(--gold-soft); line-height: 1; }
 .hero-stat__label { font-size: 12.5px; color: rgba(255,255,255,.72); margin-top: 6px; letter-spacing: .04em; }
 
