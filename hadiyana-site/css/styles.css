@@ -19,10 +19,10 @@
   --line:           #E7DDD6;
   --whatsapp:       #25D366;
 
-  --serif: "Bodoni Moda", "Noto Naskh Arabic", Georgia, serif;
+  --serif: "Fraunces", "Noto Naskh Arabic", Georgia, serif;
   --sans:  "Hanken Grotesk", "Noto Naskh Arabic", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  /* figures share the high-contrast display serif — elegant lining numerals */
-  --num:   "Bodoni Moda", Georgia, serif;
+  /* figures share the display serif — elegant lining numerals */
+  --num:   "Fraunces", Georgia, serif;
 
   --radius-sm: 12px;
   --radius:    18px;
@@ -120,7 +120,6 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
   animation: shimmer 5s linear infinite;
-  font-style: italic;
 }
 @keyframes shimmer { to { background-position: -200% center; } }
 
@@ -374,7 +373,7 @@ body.menu-open .hamburger span { background: #fff; }
 [dir="rtl"] .marquee__track { animation-name: marquee-rtl; }
 @keyframes marquee-rtl { to { transform: translateX(50%); } }
 .marquee__group { display: flex; align-items: center; flex-shrink: 0; }
-.marquee__item { display: flex; align-items: center; gap: 22px; padding-inline: 22px; font-family: var(--serif); font-size: 20px; font-style: italic; white-space: nowrap; }
+.marquee__item { display: flex; align-items: center; gap: 22px; padding-inline: 22px; font-family: var(--serif); font-size: 20px; white-space: nowrap; }
 .marquee__item::after { content: "✦"; font-size: 12px; color: var(--gold-soft); font-style: normal; }
 
 /* ============================================================
