@@ -61,8 +61,12 @@ hadiyana-site/
 
 ## Swap points
 
-1. **Hero visual** (`index.html`, `.hero__visual`) — replace the SVG phone
-   mockup with `<img src="assets/img/hero.jpg" alt="…">`.
+1. **Hero background video** (`index.html`, `.hero__bg`) — currently a muted,
+   looping YouTube embed (`0T-Np-hEL1Y`), which needs a network connection. For
+   a fully-offline asset, replace the `<iframe>` with a `<video autoplay muted
+   loop playsinline poster="assets/img/hero-poster.jpg"><source
+   src="assets/img/hero.mp4" type="video/mp4"></video>`. An aurora gradient sits
+   behind it as the offline fallback.
 2. **Share image** — drop a 1200×630 `assets/img/og-image.png`.
 3. **Favicon** — inline SVG data-URI in each `<head>`; replace when branded.
 

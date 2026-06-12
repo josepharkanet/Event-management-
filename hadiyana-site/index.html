@@ -27,8 +27,8 @@
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
       <a class="brand" href="index.html" aria-label="HADIYANA home">
+        <svg class="brand__logo" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="hbrand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9A86A"/><stop offset="1" stop-color="#9E7C38"/></linearGradient></defs><g fill="url(#hbrand)"><rect x="7.5" y="7.5" width="21" height="21" rx="5"/><rect x="7.5" y="7.5" width="21" height="21" rx="5" transform="rotate(45 18 18)"/></g><text x="18" y="19" text-anchor="middle" dominant-baseline="central" font-family="Georgia, serif" font-weight="700" font-size="14" fill="#4A0E24">H</text></svg>
         <span class="brand__name">HADIYANA</span>
-        <span class="brand__credit">by Arkanet</span>
       </a>
       <nav class="nav" id="primaryNav" aria-label="Primary">
         <button class="nav__close" id="navClose" aria-label="Close menu">
@@ -62,8 +62,18 @@
       <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="grain" aria-hidden="true"></div>
 
-      <div class="container hero__grid">
-        <div class="stagger">
+      <!-- Video background (requires network). SWAP POINT: replace the iframe with
+           <video class="hero__bgvideo" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg">
+             <source src="assets/img/hero.mp4" type="video/mp4"></video>  for a fully offline asset. -->
+      <div class="hero__bg" aria-hidden="true">
+        <iframe src="https://www.youtube-nocookie.com/embed/0T-Np-hEL1Y?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=0T-Np-hEL1Y&amp;controls=0&amp;showinfo=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;iv_load_policy=3"
+          title="HADIYANA ambient background" tabindex="-1" frameborder="0"
+          allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero__content stagger">
           <p class="hero-pill"><span class="pulse" aria-hidden="true"></span> Launching across the UAE</p>
           <h1 class="hero__title">The modern way the <span class="grad-text">UAE celebrates.</span></h1>
           <p class="hero__sub">AI-powered event platform with a built-in multi-vendor marketplace — designed for everyone living in the UAE. Plan, share, celebrate, gift, and grow from one elegant place.</p>
@@ -77,39 +87,6 @@
             <div class="hero-stat"><div class="hero-stat__num"><span data-countup data-target="10" data-suffix="M">0</span></div><div class="hero-stat__label">UAE residents</div></div>
             <div class="hero-stat"><div class="hero-stat__num"><span data-countup data-target="16" data-suffix="">0</span></div><div class="hero-stat__label">Platform modules</div></div>
             <div class="hero-stat"><div class="hero-stat__num"><span data-countup data-target="8" data-suffix="">0</span></div><div class="hero-stat__label">Signature features</div></div>
-          </div>
-        </div>
-
-        <!-- Hero visual — SWAP POINT: replace with <img src="assets/img/hero.jpg" alt="…"> -->
-        <div class="hero__visual" aria-hidden="true">
-          <div class="orbit-ring"></div>
-          <div class="phone">
-            <div class="phone__notch"></div>
-            <div class="phone__screen">
-              <span class="mock-eyebrow">Walima · Nikah</span>
-              <span class="mock-title">Sara &amp; Omar</span>
-              <span class="mock-meta">Dubai · 12 Shawwal</span>
-              <div class="mock-row"><span class="mock-dot"></span> 312 guests confirmed</div>
-              <div class="mock-row"><span class="mock-dot mock-dot--gold"></span> Gift registry · 64% claimed</div>
-              <div class="mock-bar"><span></span></div>
-              <div class="mock-chips">
-                <span class="mock-chip">RSVP</span>
-                <span class="mock-chip">Gift</span>
-                <span class="mock-chip mock-chip--solid">Share on WhatsApp</span>
-              </div>
-            </div>
-          </div>
-          <div class="glass-card glass-card--1">
-            <span class="glass-card__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
-            <span>312 RSVPs<small>confirmed in real time</small></span>
-          </div>
-          <div class="glass-card glass-card--2">
-            <span class="glass-card__icon"><svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7"/></svg></span>
-            <span>Gift received<small>AED 1,200 · Crystal set</small></span>
-          </div>
-          <div class="glass-card glass-card--3">
-            <span class="glass-card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
-            <span>Hijri reminder<small>Henna night · 10 Shawwal</small></span>
           </div>
         </div>
       </div>
@@ -127,6 +104,34 @@
         </div>
       </div>
     </div>
+
+    <!-- ============ PRODUCT PREVIEW (MacBook) ============ -->
+    <section class="section" aria-labelledby="preview-title">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">A closer look</p>
+          <h2 class="section-title" id="preview-title">Designed to feel effortless</h2>
+          <p class="section-sub">One calm dashboard for guests, gifts, vendors, and timelines — beautiful in Arabic and English.</p>
+        </div>
+        <div data-reveal>
+          <div class="macbook macbook--float" aria-hidden="true">
+            <div class="macbook__screen">
+              <span class="macbook__cam"></span>
+              <div class="macbook__ui">
+                <div class="mb-top"><span class="mb-logo">HADIYANA</span><span class="mb-pillrow"><i></i><i></i><i></i></span></div>
+                <div class="mb-grid">
+                  <div class="mb-card mb-card--lg"><span class="mb-eyebrow">Upcoming</span><span class="mb-title">Sara &amp; Omar — Walima</span><div class="mb-bar"><span></span></div><span class="mb-meta">312 / 400 guests · 78% sold</span></div>
+                  <div class="mb-card"><span class="mb-stat">312</span><span class="mb-meta">RSVPs confirmed</span></div>
+                  <div class="mb-card"><span class="mb-stat">AED 48K</span><span class="mb-meta">Gifts received</span></div>
+                  <div class="mb-card mb-card--wide"><span class="mb-eyebrow">Booked vendors</span><div class="mb-chips"><b>Catering</b><b>Décor</b><b>Photography</b><b>Henna</b></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="macbook__base"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ============ PROBLEM → SOLUTION ============ -->
     <section class="section" aria-labelledby="why-title">
@@ -262,7 +267,10 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <span class="brand__name brand__name--footer">HADIYANA</span>
+        <a class="brand" href="index.html" aria-label="HADIYANA home">
+          <svg class="brand__logo" viewBox="0 0 36 36" aria-hidden="true"><defs><linearGradient id="hbrandf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9A86A"/><stop offset="1" stop-color="#9E7C38"/></linearGradient></defs><g fill="url(#hbrandf)"><rect x="7.5" y="7.5" width="21" height="21" rx="5"/><rect x="7.5" y="7.5" width="21" height="21" rx="5" transform="rotate(45 18 18)"/></g><text x="18" y="19" text-anchor="middle" dominant-baseline="central" font-family="Georgia, serif" font-weight="700" font-size="14" fill="#4A0E24">H</text></svg>
+          <span class="brand__name brand__name--footer">HADIYANA</span>
+        </a>
         <p>The modern way the UAE celebrates. An AI-powered event platform with a built-in multi-vendor marketplace.</p>
       </div>
       <nav class="footer-col" aria-label="Explore">
@@ -274,10 +282,9 @@
       </nav>
       <div class="footer-col">
         <h4>Contact</h4>
-        <a href="mailto:info@arkanet.ae">info@arkanet.ae</a>
         <a href="tel:+971509338430">+971 50 933 8430</a>
-        <a href="https://www.arkanet.ae" target="_blank" rel="noopener">www.arkanet.ae</a>
-        <span>Dubai, UAE</span>
+        <a href="mailto:info@hadiyana.com">info@hadiyana.com</a>
+        <span>Business Bay, Dubai, UAE</span>
       </div>
       <div class="footer-col">
         <h4>Follow</h4>

@@ -43,6 +43,9 @@
       if (open) { void scrim.offsetWidth; scrim.classList.add("is-open"); }
       else { scrim.classList.remove("is-open"); }
     }
+    // menu-open neutralizes the header's backdrop-filter so the fixed nav
+    // panel isn't clipped to a semi-transparent header box when scrolled.
+    document.body.classList.toggle("menu-open", open);
     document.body.style.overflow = open ? "hidden" : "";
   }
   if (hamburger) hamburger.addEventListener("click", function () { setNav(!nav.classList.contains("is-open")); });
