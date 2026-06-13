@@ -1,34 +1,95 @@
-# Convene — Event Management UI
+# HADIYANA — Corporate / Marketing Website
 
-A calm, modern event-management dashboard built in **plain HTML + CSS** (with a
-sprinkle of vanilla JS), styled in the clean, generous-whitespace aesthetic
-showcased on [refero.design](https://refero.design).
+A premium, **multi-page** static marketing site for **HADIYANA**, the AI-powered
+event-planning platform with a built-in multi-vendor marketplace, built for the
+UAE. Pure HTML + CSS with vanilla-JS niceties — no framework, no build step,
+no backend.
 
-## What's inside
+> **Owner:** Arkanet Technologies LLC
 
-- **`index.html`** — full dashboard markup: sidebar nav, top bar with search,
-  KPI stat cards, an upcoming-events list, today's schedule timeline, and an
-  activity feed.
-- **`styles.css`** — the design system: warm neutral surfaces, an indigo
-  accent, Inter + Fraunces type pairing, soft shadows, rounded cards, and a
-  responsive layout (sidebar collapses to a drawer on mobile).
-- **`app.js`** — light interactions: event-type filtering, the mobile sidebar
-  toggle, segmented time-range switching, and `⌘K` / `Ctrl+K` to focus search.
+---
+
+## Pages
+
+| Page               | Content                                                            |
+|--------------------|--------------------------------------------------------------------|
+| `index.html`       | Animated hero, marquee, problem→solution, pillars, lifecycle, stats, feature teaser, CTA |
+| `features.html`    | 16 platform modules, AI co-pilot, 8 signature features, event types |
+| `marketplace.html` | Services & products, vendor benefits, 8-step vendor onboarding (`#vendors`) |
+| `investors.html`   | UAE opportunity stats, viral-growth mechanic, 8 revenue streams     |
+| `about.html`       | Why HADIYANA, audience tabs (hosts/guests/vendors/admin), Arkanet   |
+| `contact.html`     | Lead form (client-side validation), contact details, FAQ accordion  |
 
 ## Run it
 
-No build step. Just open the file:
+No server required — just open `index.html` (all pages are linked).
 
 ```bash
-open index.html          # macOS
-# or serve it
-python3 -m http.server   # then visit http://localhost:8000
+python3 -m http.server   # optional: http://localhost:8000
 ```
 
-## Design notes
+---
 
-- **Palette** — warm off-white canvas (`#f6f5f2`), white surfaces, indigo
-  accent, with green/rose/amber accents for status.
-- **Type** — Inter for UI text, Fraunces for display headings and figures.
-- **Motion** — subtle lift-on-hover for cards using an ease-out curve.
-- Avatar images load from `pravatar.cc`; swap for real assets in production.
+## Structure
+
+```
+/  (repo root)
+├── index.html / features.html / marketplace.html /
+│   investors.html / about.html / contact.html
+├── css/
+│   ├── styles.css        # shared styles + :root design tokens
+│   └── rtl.css           # RTL overrides (lazy-loaded when lang=ar)
+├── js/
+│   └── main.js           # shared: nav, reveal, counters, tilt, tabs,
+│                         #   accordion, lang toggle, form validation
+├── assets/img|icons/     # swap points (see READMEs inside)
+└── README.md
+```
+
+## Modern UI / animation inventory
+
+- **Aurora heroes** — drifting blurred gradient blobs + film-grain overlay
+- **Staggered entrance** (`.stagger`) and **scroll reveals** (`data-reveal`,
+  `data-reveal-group` for per-child stagger)
+- **Shimmering gradient text** (`.grad-text`)
+- **Floating glass cards** + orbiting ring + floating phone mockup (home hero)
+- **Marquee strip** of event types (pauses on hover)
+- **3D tilt** on cards (`data-tilt`, pointer-fine devices only)
+- **Count-up stats** (`data-countup`)
+- **Scroll progress bar** + glass sticky header
+- All motion respects `prefers-reduced-motion`.
+
+## Swap points
+
+1. **Hero background video** (`index.html`, `.hero__bg`) — currently a muted,
+   looping YouTube embed (`0T-Np-hEL1Y`), which needs a network connection. For
+   a fully-offline asset, replace the `<iframe>` with a `<video autoplay muted
+   loop playsinline poster="assets/img/hero-poster.jpg"><source
+   src="assets/img/hero.mp4" type="video/mp4"></video>`. An aurora gradient sits
+   behind it as the offline fallback.
+2. **Share image** — drop a 1200×630 `assets/img/og-image.png`.
+3. **Favicon** — inline SVG data-URI in each `<head>`; replace when branded.
+
+## Lead form → real backend
+
+`contact.html` → `#leadForm` is a client-side stub (validates, shows success).
+To wire a backend: set the form `action` to your endpoint and, in `js/main.js`,
+replace the success block in the submit handler with a
+`fetch(form.action, { method: "POST", body: new FormData(form) })` call.
+
+## Bilingual / RTL (v1)
+
+- The **EN / ع** toggle flips `lang`/`dir`, lazy-loads `css/rtl.css`, and swaps
+  any element carrying a `data-ar="…"` attribute (nav links ship translated).
+- Layout uses CSS logical properties throughout, so RTL mirrors cleanly;
+  `rtl.css` only handles explicit flips (arrows, letter-spacing, fonts).
+- To go fully bilingual: add `data-ar` to more nodes, or serve `*.ar.html`.
+
+## Conventions
+
+- Design tokens in `:root` (`css/styles.css`) — burgundy / champagne-gold /
+  cream, Fraunces (titles + figures) + Hanken Grotesk (body), with Noto Naskh
+  Arabic for AR mode.
+- Accessibility: landmarks, one `<h1>` per page, keyboard tabs & accordion,
+  focus states, skip links, reduced-motion support.
+- This is a **marketing site**, not the product.
