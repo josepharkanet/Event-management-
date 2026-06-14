@@ -740,7 +740,7 @@ body.menu-open .hamburger span { background: #fff; }
 
   /* let the laptop mockup grow to its content so the dashboard never clips */
   .macbook__screen { aspect-ratio: auto; }
-  .macbook__ui { padding: 14px; gap: 10px; }
+  .macbook__ui { position: relative; inset: auto; padding: 14px; gap: 10px; }
   .mb-title { font-size: 18px; }
   .mb-stat { font-size: 20px; }
   .page-hero__visual { margin-top: 34px; }

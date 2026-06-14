@@ -61,13 +61,13 @@
       <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="grain" aria-hidden="true"></div>
 
-      <!-- Video background (requires network). SWAP POINT: replace the iframe with
-           <video class="hero__bgvideo" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg">
-             <source src="assets/img/hero.mp4" type="video/mp4"></video>  for a fully offline asset. -->
+      <!-- Native hero video. Put your file at assets/img/hero.mp4 (and an
+           optional still frame at assets/img/hero-poster.jpg). If the file is
+           missing, the aurora gradient behind shows as the fallback. -->
       <div class="hero__bg" aria-hidden="true">
-        <iframe src="https://www.youtube-nocookie.com/embed/0T-Np-hEL1Y?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=0T-Np-hEL1Y&amp;controls=0&amp;showinfo=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3"
-          title="HADIYANA ambient background" tabindex="-1" frameborder="0"
-          allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        <video autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
+          <source src="assets/img/hero.mp4" type="video/mp4" />
+        </video>
       </div>
       <div class="hero__overlay" aria-hidden="true"></div>
 
