@@ -1,0 +1,463 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #020202;
+}
+
+.desktop {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #020202;
+  box-sizing: border-box;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #020202;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+#slide1 {
+  overflow: hidden;
+}
+
+.slide-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+#slide1 .text-wrapper,
+#slide1 .a-c-u-l-t-u-r-a-l-g,
+#slide1 .p {
+  position: relative;
+  z-index: 5;
+}
+
+.desktop .text-wrapper {
+  font-family: "Arial", Helvetica, sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: clamp(48px, 12vw, 182px);
+  text-align: center;
+  letter-spacing: -10px;
+  line-height: normal;
+  white-space: normal;
+  margin: 30px 0;
+  max-width: 100%;
+}
+
+.desktop .a-c-u-l-t-u-r-a-l-g {
+  font-family: "Tahoma", Helvetica, sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: clamp(12px, 3vw, 18px);
+  text-align: center;
+  letter-spacing: 3.6px;
+  line-height: normal;
+  margin: 25px 0;
+  padding-bottom: 30px;
+  max-width: 95vw;
+}
+
+.desktop .p {
+  font-family: "Tahoma", Helvetica, sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: clamp(14px, 3vw, 18px);
+  text-align: center;
+  letter-spacing: 3.6px;
+  line-height: normal;
+  margin: 25px 0;
+  padding-bottom: 30px;
+  max-width: 95vw;
+}
+
+.desktop .the-nextgeneration {
+  font-family: "Tahoma", Helvetica, sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: clamp(px, 8vw, 64px);
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin: 50px auto;
+  max-width: 95vw;
+  padding: 40px 20px;
+}
+
+.slider-controls {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+}
+
+.control-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.control-dot:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+
+.control-dot.active {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.desktop .text-wrapper,
+.desktop .a-c-u-l-t-u-r-a-l-g,
+.desktop .p,
+.desktop .the-nextgeneration {
+  margin: 0 auto;
+}
+
+/* Desktop Large (1200px+) */
+@media (min-width: 1200px) {
+  .slide {
+    padding: 40px 20px;
+  }
+
+  .desktop .text-wrapper {
+    font-size: clamp(80px, 15vw, 182px);
+    margin: 40px 0;
+    letter-spacing: -10px;
+  }
+
+  .desktop .a-c-u-l-t-u-r-a-l-g {
+    font-size: clamp(16px, 2vw, 24px);
+    margin: 30px 0;
+    padding-bottom: 40px;
+    max-width: 85vw;
+  }
+
+  .desktop .div {
+    font-size: clamp(18px, 2.5vw, 26px);
+    margin: 30px 0;
+    padding-bottom: 40px;
+    max-width: 85vw;
+  }
+
+  .desktop .p {
+    font-size: clamp(16px, 2vw, 22px);
+    margin: 30px 0;
+    padding-bottom: 40px;
+    max-width: 85vw;
+  }
+
+  .desktop .the-nextgeneration {
+    font-size: clamp(32px, 8vw, 52px);
+    padding: 40px 20px;
+    margin: 60px auto;
+    max-width: 85vw;
+  }
+
+  .slider-controls {
+    bottom: 50px;
+    gap: 20px;
+  }
+
+  .control-dot {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* Desktop (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .slide {
+    padding: 30px 20px;
+  }
+
+  .desktop .text-wrapper {
+    font-size: clamp(60px, 12vw, 120px);
+    margin: 30px 0;
+    letter-spacing: -8px;
+  }
+
+  .desktop .a-c-u-l-t-u-r-a-l-g {
+    font-size: clamp(14px, 2vw, 20px);
+    margin: 20px 0;
+    padding-bottom: 30px;
+    max-width: 85vw;
+  }
+
+  .desktop .div {
+    font-size: clamp(16px, 2.2vw, 22px);
+    margin: 20px 0;
+    padding-bottom: 30px;
+    max-width: 85vw;
+  }
+
+  .desktop .p {
+    font-size: clamp(14px, 1.8vw, 18px);
+    margin: 20px 0;
+    padding-bottom: 30px;
+    max-width: 85vw;
+  }
+
+  .desktop .the-nextgeneration {
+    font-size: clamp(32px, 7vw, 50px);
+    padding: 30px 20px;
+    margin: 50px auto;
+    max-width: 85vw;
+  }
+
+  .slider-controls {
+    bottom: 40px;
+    gap: 20px;
+  }
+
+  .control-dot {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Tablet Large (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .slide {
+    padding: 20px 15px;
+  }
+
+  .desktop .text-wrapper {
+    font-size: clamp(40px, 10vw, 80px);
+    margin: 20px 0;
+    letter-spacing: -2px;
+  }
+
+  .desktop .a-c-u-l-t-u-r-a-l-g {
+    font-size: clamp(12px, 2.2vw, 16px);
+    margin: 15px 0;
+    padding-bottom: 20px;
+    max-width: 90vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .desktop .div {
+    font-size: clamp(14px, 2.8vw, 20px);
+    margin: 15px 0;
+    padding-bottom: 20px;
+    max-width: 90vw;
+  }
+
+  .desktop .p {
+    font-size: clamp(12px, 2.3vw, 16px);
+    margin: 15px 0;
+    padding-bottom: 20px;
+    max-width: 90vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .desktop .the-nextgeneration {
+    font-size: clamp(24px, 6vw, 44px);
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 90vw;
+  }
+
+  .slider-controls {
+    bottom: 35px;
+    gap: 18px;
+  }
+
+  .control-dot {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+/* Mobile Large (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .slide {
+    padding: 15px 12px;
+  }
+
+  .desktop .text-wrapper {
+    font-size: clamp(80px, 24vw, 140px);
+    margin: 12px 0;
+    letter-spacing: 1px;
+  }
+
+  .desktop .a-c-u-l-t-u-r-a-l-g {
+    font-size: clamp(9px, 2vw, 12px);
+    margin: 10px 0;
+    padding-bottom: 15px;
+    max-width: 95vw;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .desktop .div {
+    font-size: clamp(12px, 2.8vw, 16px);
+    margin: 10px 0;
+    padding-bottom: 15px;
+    max-width: 95vw;
+    letter-spacing: 1.5px;
+  }
+
+  .desktop .p {
+    font-size: clamp(10px, 2.3vw, 14px);
+    margin: 10px 0;
+    padding-bottom: 15px;
+    max-width: 95vw;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .desktop .the-nextgeneration {
+    font-size: clamp(18px, 5vw, 32px);
+    padding: 15px;
+    margin: 30px auto;
+    max-width: 95vw;
+  }
+
+  .slider-controls {
+    bottom: 25px;
+    gap: 15px;
+  }
+
+  .control-dot {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+/* Mobile Small (below 480px) */
+@media (max-width: 479px) {
+  .slide {
+    padding: 12px 10px;
+  }
+
+  .desktop .text-wrapper {
+    font-size: clamp(72px, 22vw, 120px);
+    margin: 8px 0;
+    letter-spacing: 3px;
+  }
+
+  .desktop .a-c-u-l-t-u-r-a-l-g {
+    font-size: clamp(8px, 1.8vw, 11px);
+    margin: 8px 0;
+    padding-bottom: 12px;
+    max-width: 95vw;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .desktop .div {
+    font-size: clamp(11px, 2.5vw, 14px);
+    margin: 8px 0;
+    padding-bottom: 12px;
+    max-width: 95vw;
+    letter-spacing: 1px;
+  }
+
+  .desktop .p {
+    font-size: clamp(9px, 2vw, 12px);
+    margin: 8px 0;
+    padding-bottom: 12px;
+    max-width: 95vw;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .desktop .the-nextgeneration {
+    font-size: clamp(16px, 5vw, 28px);
+    padding: 12px;
+    margin: 20px auto;
+    max-width: 95vw;
+  }
+
+  .desktop .the-nextgeneration br {
+    display: none;
+  }
+
+  .slider-controls {
+    bottom: 18px;
+    gap: 12px;
+  }
+
+  .control-dot {
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .control-dot:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* Body and global styles */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.desktop .text-wrapper,
+.desktop .a-c-u-l-t-u-r-a-l-g,
+.desktop .div,
+.desktop .p,
+.desktop .the-nextgeneration {
+  margin: 0 auto;
+}

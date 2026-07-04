@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>RUA</title>
+        <link rel="stylesheet" href="globals.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="desktop slide active" id="slide1" aria-label="RUA landing page hero">
+            <video class="slide-video" autoplay muted loop playsinline>
+                <source src="img/background.mp4" type="video/mp4">
+            </video>
+            <h1 class="text-wrapper">RUA</h1>
+            <p class="a-c-u-l-t-u-r-a-l-g">A&nbsp;&nbsp; C&nbsp; U&nbsp; L&nbsp; T&nbsp; U&nbsp; R&nbsp; A&nbsp; L &nbsp; G&nbsp; R&nbsp; O&nbsp; W&nbsp; T&nbsp; H&nbsp;&nbsp;C&nbsp; O&nbsp; M&nbsp; P&nbsp; A&nbsp; N&nbsp; Y</p>
+            <p class="p">Rooted in the Middle East - built with a global mindset</p>
+        </main>
+
+        <main class="desktop slide" id="slide2" role="main" aria-label="Hero statement">
+            <h1 class="the-nextgeneration">Things you see before the world does. <br> Unfolding a new perspective.</h1>
+            <h1 class="the-nextgeneration">RUA</h1>
+        </main>
+
+        <div class="slider-controls">
+            <span class="control-dot active" data-slide="1" aria-label="Go to slide 1" role="button" tabindex="0"></span>
+            <span class="control-dot" data-slide="2" aria-label="Go to slide 2" role="button" tabindex="0"></span>
+        </div>
+
+        <script>
+            let currentSlide = 1;
+            let autoPlayInterval;
+            let lastScrollTime = 0;
+            const scrollDebounce = 1000;
+
+            function showSlide(n) {
+                const slides = document.querySelectorAll('.slide');
+                const dots = document.querySelectorAll('.control-dot');
+                
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                const activeSlide = document.getElementById(`slide${n}`);
+                const activeDot = document.querySelector(`[data-slide="${n}"]`);
+                
+                if (activeSlide) activeSlide.classList.add('active');
+                if (activeDot) activeDot.classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = currentSlide === 1 ? 2 : 1;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = currentSlide === 1 ? 2 : 1;
+                showSlide(currentSlide);
+            }
+
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(nextSlide, 7000);
+            }
+
+            document.querySelectorAll('.control-dot').forEach(dot => {
+                dot.addEventListener('click', function() {
+                    clearInterval(autoPlayInterval);
+                    currentSlide = parseInt(this.getAttribute('data-slide'));
+                    showSlide(currentSlide);
+                    startAutoPlay();
+                });
+
+                dot.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') this.click();
+                });
+            });
+
+            document.addEventListener('wheel', function(e) {
+                const now = Date.now();
+                if (now - lastScrollTime < scrollDebounce) return;
+                
+                lastScrollTime = now;
+                clearInterval(autoPlayInterval);
+                
+                if (e.deltaY > 0) nextSlide();
+                else if (e.deltaY < 0) prevSlide();
+                
+                startAutoPlay();
+                e.preventDefault();
+            }, { passive: false });
+
+            let touchStartY = 0;
+            document.addEventListener('touchstart', function(e) {
+                touchStartY = e.touches[0].clientY;
+            });
+
+            document.addEventListener('touchend', function(e) {
+                const touchEndY = e.changedTouches[0].clientY;
+                const now = Date.now();
+                
+                if (now - lastScrollTime < scrollDebounce) return;
+                
+                lastScrollTime = now;
+                clearInterval(autoPlayInterval);
+                
+                if (touchStartY - touchEndY > 50) nextSlide();
+                else if (touchEndY - touchStartY > 50) prevSlide();
+                
+                startAutoPlay();
+            });
+
+            startAutoPlay();
+        </script>
+    </body>
+</html>
